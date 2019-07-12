@@ -1,0 +1,6 @@
+cache/
+data/
+docker-images/
+.idea/
+vendor/
+bin/
