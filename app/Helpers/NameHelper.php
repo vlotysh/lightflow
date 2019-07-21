@@ -31,7 +31,7 @@ class NameHelper
      */
     public function convertToCamelCase(string $string): string
     {
-        return preg_replace_callback('/-(.?)/', function($matches) {
+        return preg_replace_callback('/-(.?)/', function ($matches) {
             return ucfirst($matches[1]);
         }, $string);
     }

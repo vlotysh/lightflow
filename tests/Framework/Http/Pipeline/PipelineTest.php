@@ -3,7 +3,7 @@
 namespace Tests\Framework\Http\Pipeline;
 
 use \PHPUnit\Framework\TestCase;
-use App\Core\Framework\Http\Pipeline\Pipeline;
+use Core\Framework\Http\Pipeline\Pipeline;
 use Psr\Http\Message\ServerRequestInterface;
 use Zend\Diactoros\Response\JsonResponse;
 use Zend\Diactoros\ServerRequest;

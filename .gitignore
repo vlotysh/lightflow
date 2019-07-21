@@ -4,3 +4,4 @@ docker-images/
 .idea/
 vendor/
 bin/
+*.DS_Store*

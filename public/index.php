@@ -1,9 +1,9 @@
 <?php
 
 require __DIR__.'/../vendor/autoload.php';
-require __DIR__.'/../app/Core/functions.php';
+require __DIR__ . '/../core/functions.php';
 
-use \App\Core\App;
+use \Core\App;
 
 define(APP_ROOT, __DIR__ . '/../');
 

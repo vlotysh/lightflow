@@ -3,7 +3,7 @@
 
 namespace App\Controllers;
 
-use App\Core\ServiceLocator;
+use Core\ServiceLocator;
 
 use Zend\Diactoros\Response\HtmlResponse;
 
@@ -35,6 +35,6 @@ class AbstractController
      */
     public function render(string $path, array $data = [])
     {
-        return new HtmlResponse($this->serviceLocator->get('template.service')->render($path,$data));
+        return new HtmlResponse($this->serviceLocator->get('template.service')->render($path, $data));
     }
 }

@@ -2,10 +2,10 @@
 
 namespace App\Listeners;
 
-use App\Core\Listeners\EventListenerInterface;
-use App\Core\Framework\Http\ResponseSender;
+use Core\Listeners\EventListenerInterface;
+use Core\Framework\Http\ResponseSender;
 
-use App\Core\Services\TemplateService;
+use Core\Services\TemplateService;
 use Zend\Diactoros\Response\HtmlResponse;
 
 /**
@@ -44,4 +44,3 @@ class NotFoundListener implements EventListenerInterface
         return (new ResponseSender())->send(new HtmlResponse($response, 404));
     }
 }
-

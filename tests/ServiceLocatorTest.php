@@ -2,8 +2,8 @@
 
 namespace Tests;
 
-use \App\Core\ServiceLocator;
-use \App\Core\LogService;
+use \Core\ServiceLocator;
+use \Core\LogService;
 use \PHPUnit\Framework\TestCase;
 
 class ServiceLocatorTest extends TestCase
