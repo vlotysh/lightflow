@@ -2,9 +2,13 @@
 
 namespace Core\Services;
 
-use Twig\Loader\FilesystemLoader;
-use Twig\Environment;
-
+use Twig\{
+    Loader\FilesystemLoader,
+    Environment,
+    Error\LoaderError,
+    Error\RuntimeError,
+    Error\SyntaxError
+};
 /**
  * Class TemplateService
  *
@@ -14,8 +18,13 @@ class TemplateService
 {
     /**
      * @param string $path
-     *
      * @param array $data
+     *
+     * @return string
+     *
+     * @throws LoaderError
+     * @throws RuntimeError
+     * @throws SyntaxError
      */
     public function render(string $path, array $data = []): string
     {

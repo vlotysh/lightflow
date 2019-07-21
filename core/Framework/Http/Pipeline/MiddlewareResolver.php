@@ -40,7 +40,7 @@ class MiddlewareResolver
         }
     }
 
-    /**
+    /**git 
      * @param array $handlers
      *
      * @return Pipeline
