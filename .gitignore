@@ -1,6 +1,9 @@
 cache/
 data/
 docker-images/
+bin/
+docker.env
+docker-compose.yml
 .idea/
 vendor/
 bin/
