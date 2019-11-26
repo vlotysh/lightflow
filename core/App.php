@@ -59,9 +59,7 @@ class App
         ], $serviceLocator);
 
         $eventDispatcher = $serviceLocator->get('event.dispatcher');
-
         $eventDispatcher->attach('404.exception', $serviceLocator->get('not-found.listener'));
-
         $routerContainer = $serviceLocator->get('router.container');
 
         $this->initRoutes([

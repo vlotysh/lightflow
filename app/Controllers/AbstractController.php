@@ -1,10 +1,9 @@
 <?php
 
-
 namespace App\Controllers;
 
 use Core\ServiceLocator;
-
+use Psr\Http\Message\ResponseInterface;
 use Zend\Diactoros\Response\HtmlResponse;
 
 /**
@@ -30,10 +29,10 @@ class AbstractController
     /**
      * @param string $path
      * @param array $data
-     *
-     * @return HtmlResponse
+     * @return ResponseInterface|HtmlResponse
+     * @throws \Exception
      */
-    public function render(string $path, array $data = [])
+    public function render(string $path, array $data = []): ResponseInterface
     {
         return new HtmlResponse($this->serviceLocator->get('template.service')->render($path, $data));
     }

@@ -3,6 +3,7 @@
 
 namespace Core\Framework\Http\Router;
 
+use App\Controllers\AbstractController;
 use Core\ServiceLocator;
 use Aura\Router\Route;
 
@@ -59,11 +60,10 @@ class RouterDispatcher
     public function dispatch(RouterContainer $routerContainer)
     {
         $request = $this->serviceLocator->get('request');
-
         $matcher = $routerContainer->getMatcher();
         $route = $matcher->match($request);
 
-        if (! $route) {
+        if (!$route) {
             throw new NotFoundHttpException();
         }
 
@@ -91,13 +91,16 @@ class RouterDispatcher
             list($controller, $action) = explode('::', $handler);
 
             $controllerObject = new $controller();
+            /**
+             * @var $controllerObject AbstractController
+             */
             $controllerObject->setServiceLocator($serviceLocator);
 
             return call_user_func([$controllerObject, $action], $request);
         } catch (LoaderError $e) {
             throw new Exception($e->getMessage());
         } catch (Throwable $e) {
-            var_dump($e);
+            var_dump($e->getMessage());
             exit();
             throw new Exception("Unable to load handler {$handler}");
         }

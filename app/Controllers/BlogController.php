@@ -2,8 +2,8 @@
 
 namespace App\Controllers;
 
+use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use Zend\Diactoros\Response\HtmlResponse;
 
 /**
  * Class BlogController
@@ -14,19 +14,20 @@ class BlogController extends AbstractController
 {
     /**
      * @param ServerRequestInterface $request
-     * @return HtmlResponse
+     * @return ResponseInterface
+     * @throws \Exception
      */
-    public function index(ServerRequestInterface $request)
+    public function index(ServerRequestInterface $request): ResponseInterface
     {
         return $this->render('blog/index.html.twig');
     }
 
     /**
      * @param ServerRequestInterface $request
-     *
-     * @return HtmlResponse
+     * @return ResponseInterface
+     * @throws \Exception
      */
-    public function show(ServerRequestInterface $request)
+    public function show(ServerRequestInterface $request): ResponseInterface
     {
         $id = $request->getAttribute('id');
 

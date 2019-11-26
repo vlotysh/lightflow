@@ -1,9 +1,9 @@
 <?php
 
-
 namespace App\Controllers;
 
-use Zend\Diactoros\Response\HtmlResponse;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
 
 /**
  * Class IndexController
@@ -13,9 +13,11 @@ use Zend\Diactoros\Response\HtmlResponse;
 class IndexController extends AbstractController
 {
     /**
-     * @return HtmlResponse
+     * @param ServerRequestInterface $request
+     * @return ResponseInterface
+     * @throws \Exception
      */
-    public function index()
+    public function index(ServerRequestInterface $request): ResponseInterface
     {
         return $this->render('index/default.html.twig');
     }
